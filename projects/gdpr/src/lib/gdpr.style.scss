@@ -1,0 +1,25 @@
+@mixin forgerock-gdpr-theme($theme) {
+  $primary: map-get($theme, primary);
+  $primaryContrast: map-get($primary, contrast);
+  $accent: map-get($theme, accent);
+  $accentContrast: map-get($accent, contrast);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  div[role='dialog'] {
+    &.cc-window {
+      background-color: mat-color($primary, 800) !important;
+      color: mat-color($primaryContrast, 800) !important;
+      .cc-deny {
+        color: mat-color($primaryContrast, 800) !important;
+      }
+
+      .cc-allow {
+        background-color: mat-color($accent, 800) !important;
+        color: mat-color($accentContrast, 800) !important;
+      }
+    }
+  }
+}

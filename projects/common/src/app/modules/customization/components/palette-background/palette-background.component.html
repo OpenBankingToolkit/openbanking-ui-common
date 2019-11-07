@@ -1,0 +1,35 @@
+<mat-form-field>
+  <mat-select placeholder="Apply predefined theme" [formControl]="themesControl">
+    <mat-option *ngFor="let name of themeNames" [value]="name">
+      {{ name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button
+  mat-button
+  *ngFor="let color of foregroundPaletteProps"
+  [ngStyle]="{ 'background-color': getColor('foreground', color) }"
+  [colorPicker]="getCssVarValue('foreground', color)"
+  [style.background]="getCssVarValue('foreground', color)"
+  cpPosition="left"
+  cpAlphaChannel="enabled"
+  cpCancelButton="true"
+  cpOutputFormat="rgba"
+  (colorPickerChange)="changeColor('foreground', color, $event)"
+>
+  {{ color }}
+</button>
+<button
+  mat-button
+  *ngFor="let color of backgroundPaletteProps"
+  [ngStyle]="{ 'background-color': getColor('background', color) }"
+  [colorPicker]="getCssVarValue('background', color)"
+  [style.background]="getCssVarValue('background', color)"
+  cpPosition="left"
+  cpAlphaChannel="enabled"
+  cpCancelButton="true"
+  cpOutputFormat="rgba"
+  (colorPickerChange)="changeColor('background', color, $event)"
+>
+  {{ color }}
+</button>

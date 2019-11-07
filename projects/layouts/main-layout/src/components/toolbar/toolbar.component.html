@@ -1,0 +1,29 @@
+<mat-toolbar class="mat-elevation-z1 app-bar">
+  <layout-container>
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+      <button
+        mat-icon-button
+        class="navbar-toggle-button"
+        *ngIf="!rightNavbar"
+        (click)="toggleSidebarOpen('navbar')"
+        fxHide.gt-md
+      >
+        <mat-icon class="secondary-text">menu</mat-icon>
+      </button>
+
+      <ng-container *ngIf="type === 'vertical'">
+        <forgerock-customer-icon fxHide.gt-md></forgerock-customer-icon>
+        <span class="logo-text" fxHide.gt-md>{{ clientName }}</span>
+      </ng-container>
+
+      <ng-container *ngIf="type === 'horizontal'">
+        <forgerock-customer-icon></forgerock-customer-icon>
+        <span class="logo-text">{{ clientName }}</span>
+      </ng-container>
+
+      <div style="flex: 1;"></div>
+
+      <ng-template #dynamicTarget></ng-template>
+    </div>
+  </layout-container>
+</mat-toolbar>

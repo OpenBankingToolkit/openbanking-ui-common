@@ -1,0 +1,39 @@
+<ng-container>
+  <mat-progress-bar mode="indeterminate" [style.visibility]="isLoading ? 'visible' : 'hidden'"></mat-progress-bar>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="formGroup" (ngSubmit)="submit()">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="First Name" formControlName="givenName" required autocomplete="given-name" />
+          <mat-error *ngIf="formGroup.controls.givenName.hasError('required') && formGroup.controls.givenName.touched">
+            Firstname <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Last Name" formControlName="sn" required autocomplete="family-name" />
+          <mat-error *ngIf="formGroup.controls.sn.hasError('required') && formGroup.controls.sn.touched">
+            Lastname <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" formControlName="mail" type="email" required autocomplete="email" />
+          <mat-error *ngIf="formGroup.controls.mail.hasError('required') && formGroup.controls.mail.touched">
+            Email <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="formGroup.controls.mail.hasError('mail') && formGroup.controls.mail.touched">
+            Should be a valid email address
+          </mat-error>
+        </mat-form-field>
+        <button
+          *ngIf="!isDisabled"
+          mat-flat-button
+          type="submit"
+          color="accent"
+          [disabled]="isLoading || formGroup.invalid"
+        >
+          {{ 'SAVE' | translate }}
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

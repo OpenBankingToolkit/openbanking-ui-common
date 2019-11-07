@@ -1,0 +1,19 @@
+@import '../../../../../utils/src/lib/scss/mixins/breakpoints';
+
+:host {
+  max-width: 500px;
+  display: block;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mat-card {
+    min-width: 490px;
+    padding: 40px;
+    @include media-breakpoint-down('sm') {
+      min-width: auto;
+      padding: 24px;
+    }
+  }
+}

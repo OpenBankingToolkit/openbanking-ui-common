@@ -1,0 +1,61 @@
+:host {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+
+  mat-sidenav-container {
+    width: 100%;
+  }
+
+  h3 {
+    align-items: baseline;
+    small {
+      margin-left: 5px;
+    }
+  }
+
+  mat-sidenav {
+    width: 360px;
+    overflow: initial;
+  }
+
+  mat-panel-description {
+    justify-content: flex-end;
+  }
+
+  mat-panel-title {
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  mat-list {
+    overflow-y: auto;
+    max-height: calc(100% - 64px);
+  }
+
+  .flex {
+    flex: 1;
+  }
+
+  .theme-options-button {
+    position: fixed;
+    top: 160px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 0;
+    z-index: 998;
+    background-color: #eb5757;
+    mat-icon {
+      color: white;
+    }
+  }
+
+  .export-button {
+    width: 100%;
+  }
+}

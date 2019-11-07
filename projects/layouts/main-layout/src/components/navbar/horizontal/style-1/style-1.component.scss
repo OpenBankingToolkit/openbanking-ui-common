@@ -1,0 +1,43 @@
+@import '../../../../../../../utils/src/lib/scss/mixins/breakpoints';
+
+@mixin forgerock-main-layout-nav-horizontal1-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $sidebar-bg-color: mat-color($background, dialog);
+  $sidebar-navbar-bg-color: mat-color($background, app-bar);
+  $menu-bg-color: mat-color($primary, 700);
+  $menu-color: mat-color(map-get($primary, 'contrast'), 700);
+  $color: mat-color($foreground, text);
+
+  navbar-horizontal-style-1 {
+    padding: 0 16px;
+    background-color: $menu-bg-color !important;
+    color: $menu-color;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 56px;
+    max-height: 56px;
+    min-height: 56px;
+
+    .children {
+      background-color: $menu-bg-color !important;
+    }
+
+    .nav-link {
+      &.active {
+        background-color: mat-color($accent, 600) !important;
+        color: mat-color(map-get($accent, 'contrast'), 600) !important;
+      }
+      &:hover {
+        background-color: mat-color($accent, 700) !important;
+        color: mat-color(map-get($accent, 'contrast'), 700) !important;
+      }
+    }
+  }
+}

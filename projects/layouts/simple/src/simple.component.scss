@@ -1,0 +1,23 @@
+@import '../../../utils/src/lib/scss/mixins/breakpoints';
+
+:host {
+  width: 100%;
+  overflow: auto;
+  padding: 20px;
+  display: block;
+  @include media-breakpoint-down('xl') {
+    padding: 50px;
+  }
+  @include media-breakpoint-down('lg') {
+    padding: 30px;
+  }
+  @include media-breakpoint-down('md') {
+    padding: 20px;
+  }
+  @include media-breakpoint-down('sm') {
+    padding: 10px;
+  }
+  @include media-breakpoint-down('xs') {
+    padding: 10px;
+  }
+}
