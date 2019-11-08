@@ -10,12 +10,6 @@ import { ForgerockAuthRegisterModule } from './components/forgerock-auth-registe
 import { ForgerockAuthLoginModule } from './components/forgerock-auth-login/forgerock-auth-login.module';
 import { ForgerockAuthenticationRootEffects } from './store/effects/index';
 
-export interface ForgerockAuthenticationConfig {
-  api: string;
-}
-
-export type ForgerockAuthenticationFactory = () => ForgerockAuthenticationConfig;
-
 export const AUTH_REDUCERS_TOKEN = new InjectionToken<ActionReducerMap<any>>('authenticationReducers');
 
 export function getAuthReducers() {
@@ -33,7 +27,6 @@ export function getAuthReducers() {
     ForgerockAuthProfileModule,
     StoreModule.forFeature('authentication', AUTH_REDUCERS_TOKEN),
     EffectsModule.forRoot(ForgerockAuthenticationRootEffects)
-    // EffectsModule.forFeature(ForgerockAuthenticationRootEffects)
   ],
   declarations: [],
   exports: [],
@@ -45,11 +38,4 @@ export function getAuthReducers() {
     }
   ]
 })
-export class ForgerockAuthenticationModule {
-  static forRoot(config?: ForgerockAuthenticationFactory) {
-    return {
-      ngModule: ForgerockAuthenticationModule,
-      providers: []
-    };
-  }
-}
+export class ForgerockAuthenticationModule {}

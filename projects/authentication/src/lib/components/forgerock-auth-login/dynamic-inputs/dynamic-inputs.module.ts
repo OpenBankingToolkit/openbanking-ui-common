@@ -9,17 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {
-  ChoiceCallbackComponent,
-  ConfirmationCallbackComponent,
-  FormButtonComponent,
-  FormDialogComponent,
-  HiddenValueCallbackComponent,
-  NameCallbackComponent,
-  PasswordCallbackComponent,
-  RedirectCallbackComponent,
-  TextOutputCallbackComponent
-} from '.';
+import { ConfirmationCallbackComponent } from './confirmation-callback.component';
+import { ChoiceCallbackComponent } from './choice-callback.component';
+import { NameCallbackComponent } from './name-callback.component';
+import { PasswordCallbackComponent } from './password-callback.component';
+import { HiddenValueCallbackComponent } from './hiddenvalue-callback.component';
+import { TextOutputCallbackComponent } from './textoutput-callback.component';
+import { RedirectCallbackComponent } from './redirect-callback.component';
+import { FormButtonComponent } from './form-button.component';
+import { FormDialogComponent } from './form-dialog.component';
 
 @NgModule({
   imports: [
@@ -35,23 +33,23 @@ import {
     FlexLayoutModule
   ],
   declarations: [
+    ChoiceCallbackComponent,
+    ConfirmationCallbackComponent,
     NameCallbackComponent,
     PasswordCallbackComponent,
     HiddenValueCallbackComponent,
     TextOutputCallbackComponent,
-    ConfirmationCallbackComponent,
-    ChoiceCallbackComponent,
     RedirectCallbackComponent,
     FormButtonComponent,
     FormDialogComponent
   ],
   entryComponents: [
+    ChoiceCallbackComponent,
+    ConfirmationCallbackComponent,
     NameCallbackComponent,
     PasswordCallbackComponent,
     HiddenValueCallbackComponent,
     TextOutputCallbackComponent,
-    ConfirmationCallbackComponent,
-    ChoiceCallbackComponent,
     RedirectCallbackComponent,
     FormButtonComponent,
     FormDialogComponent

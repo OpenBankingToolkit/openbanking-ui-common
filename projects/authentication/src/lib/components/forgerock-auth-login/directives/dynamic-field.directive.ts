@@ -10,18 +10,16 @@ import {
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import debug from 'debug';
-import {
-  ChoiceCallbackComponent,
-  ConfirmationCallbackComponent,
-  FormButtonComponent,
-  HiddenValueCallbackComponent,
-  NameCallbackComponent,
-  PasswordCallbackComponent,
-  RedirectCallbackComponent,
-  TextOutputCallbackComponent
-} from '../dynamic-inputs';
 
 import { Field, ICallback } from '../../../models';
+import { NameCallbackComponent } from '../dynamic-inputs/name-callback.component';
+import { PasswordCallbackComponent } from '../dynamic-inputs/password-callback.component';
+import { HiddenValueCallbackComponent } from '../dynamic-inputs/hiddenvalue-callback.component';
+import { TextOutputCallbackComponent } from '../dynamic-inputs/textoutput-callback.component';
+import { ConfirmationCallbackComponent } from '../dynamic-inputs/confirmation-callback.component';
+import { ChoiceCallbackComponent } from '../dynamic-inputs/choice-callback.component';
+import { RedirectCallbackComponent } from '../dynamic-inputs/redirect-callback.component';
+import { FormButtonComponent } from '../dynamic-inputs/form-button.component';
 
 const log = debug('dynamicField');
 
