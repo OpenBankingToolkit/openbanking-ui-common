@@ -1,0 +1,104 @@
+<mat-sidenav-container hasBackdrop="false">
+  <mat-sidenav
+    *ngIf="enable && isOpened"
+    mode="side"
+    position="end"
+    mode="over"
+    fixedBottomGap="0"
+    fixedTopGap="0"
+    fixedInViewport
+    [opened]="isOpened"
+  >
+    <mat-toolbar>
+      <span>Theme Options</span> <span class="flex"></span>
+      <button mat-icon-button (click)="close()">
+        <mat-icon class="example-icon">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-list>
+      <h3 mat-subheader>Logo <small>(SVG only)</small></h3>
+      <forgerock-customization-file-upload (change)="uploadLogo($event)">
+        <forgerock-customer-logo width="250"></forgerock-customer-logo>
+      </forgerock-customization-file-upload>
+      <ng-container *ngIf="!disableIcon">
+        <h3 mat-subheader>Icon <small>(SVG Square only)</small></h3>
+        <forgerock-customization-file-upload (change)="uploadIcon($event)">
+          <forgerock-customer-icon width="50" height="50"></forgerock-customer-icon>
+        </forgerock-customization-file-upload>
+      </ng-container>
+      <h3 mat-subheader>Favicon <small>(SVG Square only)</small></h3>
+      <forgerock-customization-file-upload (change)="uploadFavicon($event)">
+        <forgerock-customer-favicon width="32" height="32"></forgerock-customer-favicon>
+      </forgerock-customization-file-upload>
+      <h3 mat-subheader>Theme Colors</h3>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <forgerock-customization-palette-sample
+                cssvars="true"
+                [colors]="['--palette-primary-500']"
+              ></forgerock-customization-palette-sample>
+              <span>Primary Brand Color</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <forgerock-customization-palette type="primary"></forgerock-customization-palette>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <forgerock-customization-palette-sample
+                cssvars="true"
+                [colors]="['--palette-accent-500']"
+              ></forgerock-customization-palette-sample>
+              <span>Accent Color</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <forgerock-customization-palette type="accent"></forgerock-customization-palette>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <forgerock-customization-palette-sample
+                cssvars="true"
+                [colors]="['--palette-warn-500']"
+              ></forgerock-customization-palette-sample>
+              <span>Warn Color</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <forgerock-customization-palette type="warn"></forgerock-customization-palette>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <forgerock-customization-palette-sample
+                cssvars="true"
+                [colors]="['--palette-background-background']"
+              ></forgerock-customization-palette-sample>
+              <span>Foreground/Background Theme</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <forgerock-customization-palette-background></forgerock-customization-palette-background>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <h3 mat-subheader>Export Configuration</h3>
+      <mat-list-item>
+        <button mat-flat-button color="accent" class="export-button" (click)="export()">
+          <mat-icon>cloud_download</mat-icon> Export
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+    <button
+      *ngIf="enable"
+      mat-icon-button
+      color="primary"
+      class="mat-elevation-z2 theme-options-button"
+      (click)="open()"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

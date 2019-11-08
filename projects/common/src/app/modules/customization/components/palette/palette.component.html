@@ -1,0 +1,24 @@
+<mat-form-field>
+  <mat-select placeholder="Apply predefined theme" [formControl]="themesControl">
+    <mat-option *ngFor="let name of themeNames" [value]="name">
+      <forgerock-customization-palette-sample
+        [colors]="[themeObject[name]['500']]"
+      ></forgerock-customization-palette-sample>
+      {{ name | slice: 4 }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button
+  mat-button
+  *ngFor="let color of paletteProps"
+  [ngStyle]="{ 'background-color': getColor(color) }"
+  [colorPicker]="getCssVarValue(color)"
+  [style.background]="getCssVarValue(color)"
+  cpPosition="left"
+  cpAlphaChannel="disabled"
+  cpCancelButton="true"
+  cpOutputFormat="rgba"
+  (colorPickerChange)="changeColor(color, $event)"
+>
+  {{ color }}
+</button>

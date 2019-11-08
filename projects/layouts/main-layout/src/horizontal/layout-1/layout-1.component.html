@@ -1,0 +1,78 @@
+<div id="main" *ngIf="config">
+  <div id="container-1" class="container">
+    <!-- NAVBAR: Left -->
+    <ng-container *ngIf="config.navbar.position === 'left'">
+      <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
+    </ng-container>
+    <!-- / NAVBAR: Left -->
+
+    <div id="container-2" class="container">
+      <toolbar *ngIf="!config.toolbar.hidden" type="horizontal"></toolbar>
+      <navbar variant="horizontal-style-1" class="top-navbar" fxHide fxShow.gt-md *ngIf="!config.navbar.hidden">
+      </navbar>
+      <div id="container-3" class="container">
+        <!-- CONTENT -->
+        <content></content>
+        <!-- / CONTENT -->
+
+        <!-- FOOTER: Below -->
+        <ng-container *ngIf="config.footer.position === 'above-static'">
+          <ng-container *ngTemplateOutlet="footer"></ng-container>
+        </ng-container>
+        <!-- / FOOTER: Below -->
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR: Right -->
+  <ng-container *ngIf="config.navbar.position === 'right'">
+    <ng-container *ngTemplateOutlet="rightNavbar"></ng-container>
+  </ng-container>
+  <!-- / NAVBAR: Right -->
+
+  <!-- FOOTER: Above -->
+  <ng-container *ngIf="config.footer.position === 'above-fixed'">
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+  </ng-container>
+  <!-- FOOTER: Above -->
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+  <footer *ngIf="!config.footer.hidden" [ngClass]="[config.footer.position]"></footer>
+</ng-template>
+<!-- / FOOTER -->
+
+<!-- LEFT NAVBAR -->
+<ng-template #leftNavbar>
+  <forgerock-layout-sidebar
+    foldedAutoTriggerOnHover="false"
+    name="navbar"
+    class="navbar-forgerock-layout-sidebar"
+    [folded]="config.navbar.folded"
+    *ngIf="!config.navbar.hidden"
+  >
+    <navbar variant="vertical-style-1" class="left-navbar"></navbar>
+  </forgerock-layout-sidebar>
+</ng-template>
+
+<!-- / LEFT NAVBAR -->
+
+<!-- RIGHT NAVBAR -->
+<ng-template #rightNavbar>
+  <forgerock-layout-sidebar
+    name="navbar"
+    position="right"
+    class="navbar-forgerock-layout-sidebar"
+    [folded]="config.navbar.folded"
+    lockedOpen="gt-md"
+    *ngIf="!config.navbar.hidden"
+  >
+    <navbar variant="vertical-style-1" class="right-navbar"></navbar>
+  </forgerock-layout-sidebar>
+</ng-template>
+<!-- / RIGHT NAVBAR -->

@@ -1,0 +1,21 @@
+@import '../../../../../utils/src/lib/scss/mixins/breakpoints';
+
+:host {
+  width: 100%;
+  overflow: auto;
+
+  > div {
+    .content {
+      margin-top: 10px;
+    }
+    .user-profile {
+      margin: 20px 0;
+      .name {
+        font-size: 1.4rem;
+      }
+      .username {
+        font-size: 1rem;
+      }
+    }
+  }
+}

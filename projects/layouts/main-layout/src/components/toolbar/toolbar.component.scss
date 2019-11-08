@@ -1,0 +1,64 @@
+@import '../../../../../utils/src/lib/scss/mixins/breakpoints';
+
+@mixin forgerock-main-layout-toolbar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $appbar-bg-color: mat-color($primary, 800);
+  $appbar-color: mat-color(map-get($primary, 'contrast'), 800);
+
+  mat-toolbar.app-bar {
+    background-color: $appbar-bg-color;
+    color: $appbar-color;
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    z-index: 4;
+
+    @include media-breakpoint-down('xs') {
+      padding: 0 8px;
+    }
+
+    &.below {
+      z-index: 2;
+    }
+
+    .mat-toolbar {
+      position: relative;
+      background: inherit;
+      color: inherit;
+    }
+
+    .navbar-toggle-button {
+      min-width: 56px;
+      height: 56px;
+      mat-icon {
+        color: $appbar-color;
+      }
+    }
+
+    .toolbar-separator {
+      height: 64px;
+      width: 1px;
+      background: rgba(0, 0, 0, 0.12);
+
+      @include media-breakpoint-down('xs') {
+        height: 56px;
+      }
+    }
+
+    .logo-text {
+      margin-left: 12px;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.4px;
+      line-height: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

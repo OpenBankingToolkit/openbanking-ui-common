@@ -1,0 +1,9 @@
+<div class="center">
+  <file-drop headertext="" customstyle="fg-drop-zone" (onFileDrop)="dropped($event)">
+    <!-- <input type="file" (change)="inputChange($event)"> -->
+    <div class="backdrop">
+      <h4><mat-icon>cloud_upload</mat-icon> Drop to upload file</h4>
+    </div>
+    <ng-content></ng-content>
+  </file-drop>
+</div>

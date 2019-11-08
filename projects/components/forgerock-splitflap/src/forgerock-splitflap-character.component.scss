@@ -1,0 +1,231 @@
+@mixin xxl {
+  height: 128px;
+  width: 96px;
+  font-size: inherit;
+  line-height: inherit;
+}
+@mixin xl {
+  height: 96px;
+  width: 72px;
+  font-size: inherit;
+  line-height: inherit;
+}
+@mixin l {
+  height: 72px;
+  width: 54px;
+  font-size: inherit;
+  line-height: inherit;
+}
+@mixin m {
+  height: 54px;
+  width: 40px;
+  font-size: inherit;
+  line-height: inherit;
+}
+@mixin s {
+  height: 40px;
+  width: 30px;
+  font-size: inherit;
+  line-height: inherit;
+}
+@mixin xs {
+  height: 30px;
+  width: 24px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+:host {
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  border-radius: 5px;
+  margin: 0 0 0 4px;
+  @include m;
+
+  div {
+    position: absolute;
+    text-align: center;
+    box-sizing: content-box;
+    border-radius: 3px;
+    @include m;
+  }
+  .top {
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    clip: rect(0px, 40px, 26px, 0px);
+  }
+
+  .bottom {
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    clip: rect(27px, 40px, 54px, 0px);
+  }
+
+  &:first-child {
+    margin: 0;
+  }
+
+  &.XXL {
+    border-radius: 8px;
+    @include xxl;
+
+    div {
+      border-radius: 6px;
+      @include xxl;
+    }
+    .top {
+      clip: rect(0px, 96px, 64px, 0px);
+    }
+    .bottom {
+      clip: rect(65px, 96px, 128px, 0px);
+    }
+  }
+
+  &.XL {
+    border-radius: 7px;
+    margin: 0 0 0 4px;
+    @include xl;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    div {
+      border-radius: 5px;
+      @include xl;
+    }
+
+    .top {
+      clip: rect(0px, 72px, 47px, 0px);
+    }
+
+    .bottom {
+      clip: rect(48px, 72px, 96px, 0px);
+    }
+  }
+
+  &.L {
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+    @include l;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    div {
+      border-radius: 4px;
+    }
+
+    div {
+      @include l;
+    }
+
+    .top {
+      clip: rect(0px, 54px, 35px, 0px);
+    }
+
+    .bottom {
+      clip: rect(36px, 54px, 72px, 0px);
+    }
+  }
+
+  &.S {
+    border-radius: 4px;
+    margin: 0 0 0 2px;
+    @include s;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    div {
+      border-radius: 2px;
+    }
+
+    div {
+      @include s;
+    }
+
+    .top {
+      clip: rect(0px, 30px, 19px, 0px);
+    }
+
+    .bottom {
+      clip: rect(20px, 30px, 40px, 0px);
+    }
+  }
+
+  &.XS {
+    border-radius: 3px;
+    margin: 0 0 0 2px;
+    @include xs;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    div {
+      border-radius: 1px;
+    }
+
+    div {
+      @include xs;
+    }
+
+    .top {
+      clip: rect(0px, 24px, 14px, 0px);
+    }
+
+    .bottom {
+      clip: rect(15px, 24px, 30px, 0px);
+    }
+  }
+
+  &.dark {
+    background-color: #222;
+    border: 1px solid #333;
+
+    div {
+      color: #f0f0f0;
+      padding: 0px;
+      background-color: black;
+    }
+  }
+
+  &.light {
+    border: 1px solid #ddd;
+    background-color: #eee;
+
+    div {
+      color: #222;
+      padding: 0px;
+      background-color: #f6f6f6;
+    }
+  }
+
+  /* The starting CSS styles for the enter animation */
+  .front.top {
+    transform: scaleY(1);
+  }
+
+  .front.top.flip {
+    transform: scaleY(0);
+    /*transition-duration: 0.025s;*/
+    transition-timing-function: ease-in;
+  }
+
+  .front.bottom {
+    transform: scaleY(0);
+  }
+
+  .front.bottom.flip {
+    transform: scaleY(1);
+    /*transition-duration: 0.025s;
+    transition-delay: 0.025s;*/
+    transition-timing-function: linear;
+  }
+}

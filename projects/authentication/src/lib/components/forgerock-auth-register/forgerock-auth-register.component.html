@@ -1,0 +1,70 @@
+<mat-card>
+  <forgerock-customer-logo></forgerock-customer-logo>
+  <mat-card-content>
+    <h1>{{ 'SIGNUP' | translate }}</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Username" formControlName="username" required autocomplete="username" />
+        <mat-error *ngIf="formGroup.controls.username.hasError('minlength') && formGroup.controls.username.touched">
+          Username must be at least 6 characters long
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.username.hasError('lowercase') && formGroup.controls.username.touched">
+          Username must be lowercase
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.username.hasError('required') && formGroup.controls.username.touched">
+          Username <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="First Name" formControlName="firstname" required autocomplete="given-name" />
+        <mat-error *ngIf="formGroup.controls.firstname.hasError('required') && formGroup.controls.firstname.touched">
+          Firstname <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Last Name" formControlName="lastname" required autocomplete="given-name" />
+        <mat-error *ngIf="formGroup.controls.lastname.hasError('required') && formGroup.controls.lastname.touched">
+          Lastname <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="email" type="email" required autocomplete="email" />
+        <mat-error *ngIf="formGroup.controls.email.hasError('required') && formGroup.controls.email.touched">
+          Email <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.email.hasError('email') && formGroup.controls.email.touched">
+          Should be a valid email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+          required
+          autocomplete="current-password"
+        />
+        <mat-error *ngIf="formGroup.controls.password.hasError('minlength') && formGroup.controls.password.touched">
+          Password must be at least 8 characters long
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.password.hasError('required') && formGroup.controls.password.touched">
+          Password <strong>required</strong>
+        </mat-error>
+        <!-- <mat-error *ngIf="formGroup.controls.password.hasError('pattern') && formGroup.controls.password.touched">
+          Password must have Lowercase letters, Uppercase letters, Numbers & Special characters
+        </mat-error> -->
+      </mat-form-field>
+      <mat-checkbox formControlName="consent" required>I agree to the terms and conditions</mat-checkbox>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <button mat-flat-button type="submit" color="accent" [disabled]="formGroup.invalid">
+          {{ 'SIGNUP' | translate }}
+        </button>
+        <p>
+          {{ 'REGISTER.ALREADY_HAVE_ACCOUNT' | translate }}
+          <a routerLink="/login" queryParamsHandling="preserve">{{ 'SIGNIN' | translate }}</a>
+        </p>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,36 @@
+@import 'mixins/breakpoints';
+
+@mixin forgerock-alert-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  $primary-bg-color: mat-color($primary, 800);
+  $accent-bg-color: mat-color($accent, 800);
+  $warn-bg-color: mat-color($warn, 800);
+  $background-bg-color: mat-color($background, background);
+  $foreground-text-color: mat-color($foreground, text);
+
+  forgerock-alert {
+    display: block;
+    padding: 20px;
+    background-color: $background-bg-color;
+    color: $foreground-text-color;
+
+    &.primary {
+      background-color: $primary-bg-color;
+      color: white;
+    }
+    &.accent {
+      background-color: $accent-bg-color;
+      color: white;
+    }
+    &.warn {
+      background-color: $warn-bg-color;
+      color: white;
+    }
+  }
+}

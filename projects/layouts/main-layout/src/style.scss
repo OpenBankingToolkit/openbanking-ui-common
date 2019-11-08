@@ -1,0 +1,11 @@
+@import './components/toolbar/toolbar.component';
+@import './components/navbar/vertical/style-1/style-1.component';
+@import './components/navbar/horizontal/style-1/style-1.component.scss';
+@import './navigation/navigation.component.scss';
+
+@mixin forgerock-main-layout-theme($theme) {
+  @include forgerock-main-layout-toolbar-theme($theme);
+  @include forgerock-main-layout-nav-vertical1-theme($theme);
+  @include forgerock-main-layout-nav-horizontal1-theme($theme);
+  @include forgerock-main-layout-navigation-theme($theme);
+}

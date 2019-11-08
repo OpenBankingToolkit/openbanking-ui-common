@@ -1,0 +1,16 @@
+<div class="navbar-top">
+  <forgerock-customer-icon></forgerock-customer-icon>
+  <span class="logo-text">{{ clientName }}</span>
+
+  <div class="buttons">
+    <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-md>
+      <mat-icon class="secondary-text">menu</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="navbar-scroll-container">
+  <div class="navbar-content">
+    <fuse-navigation layout="vertical"></fuse-navigation>
+  </div>
+</div>
