@@ -31,6 +31,14 @@ steps:
       - 'cf_export COMMIT_NUMBER'
       - cf_export BUILD_VERSION=v${PROJECT_VERSION}.${COMMIT_NUMBER}
 
+  set-dist-var:
+    image: jess/jq
+    title: 'Set package version'
+    working_directory: ${{dist_clone}}
+    commands:
+      - jq -r  '[ .version |= "${{BUILD_VERSION}}"]' package.json > package.json.tmp
+      - mv package.json.tmp package.json
+
   build:
     image: node:10
     title: 'Build ob-ui-common'
@@ -49,9 +57,9 @@ steps:
     working_directory: ${{dist_clone}}
     commands:
       - ls -la
-      - rm -fr ./*
+      - mv ./package.json /codefresh/volume/dist
+      - rm -r ./*
       - cp -r /codefresh/volume/dist/* ./
-      - echo "{\"name\": \"ob-ui-libs\", \"version\": \"${{BUILD_VERSION}}\"}" > package.json
       - git config --global user.email "codefresh@codefresh.io"
       - git config --global user.name "Codefresh"
       - git add -A
