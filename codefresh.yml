@@ -51,6 +51,7 @@ steps:
       - ls -la
       - rm -fr ./*
       - cp -r /codefresh/volume/dist/* ./
+      - echo "{\"name\": \"ob-ui-libs\", \"version\": \"${{BUILD_VERSION}}\"}" > package.json
       - git config --global user.email "codefresh@codefresh.io"
       - git config --global user.name "Codefresh"
       - git add -A
