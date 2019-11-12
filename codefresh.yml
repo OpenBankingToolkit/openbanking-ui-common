@@ -42,15 +42,6 @@ steps:
       - rm -fr /codefresh/volume/dist
       - mv ./dist /codefresh/volume/dist
 
-  # github_prerelease:
-  #   image: codefresh/cfstep-github-release
-  #   environment:
-  #     - GITHUB_TOKEN=${{GITHUB_ACCESS_TOKEN}}
-  #     - FILES=/codefresh/volume/dist/*
-  #     - CF_REPO_OWNER=ForgeCloud
-  #     - CF_REPO_NAME=ob-ui-libs
-  #     - CF_BRANCH_TAG_NORMALIZED=v.0.0.0
-  #     - PRERELEASE=true
   release:
     image: codefreshio/git-image:latest
     title: 'Release ob-ui-common'
@@ -64,8 +55,8 @@ steps:
       - git config --global user.name "Codefresh"
       - git add -A
       - git commit --allow-empty -m "Build ${{BUILD_VERSION}}"
-      - git tag -l "${{BUILD_VERSION}}"
-      - git push https://${{GITHUB_USERNAME}}:${{GITHUB_ACCESS_TOKEN}}@github.com/ForgeCloud/ob-ui-libs.git "master" --tags
+      - git tag -a "${{BUILD_VERSION}}" -m "Codefresh Build ${{BUILD_VERSION}}"
+      - git push https://${{GITHUB_USERNAME}}:${{GITHUB_ACCESS_TOKEN}}@github.com/ForgeCloud/ob-ui-libs.git master --tags
     when:
       branch:
         only:
