@@ -1,0 +1,69 @@
+version: '1.0'
+
+stages:
+  - build
+  - release
+
+steps:
+  lib_clone:
+    type: git-clone
+    title: Git Clone OB UI Common
+    repo: ForgeCloud/ob-ui-common
+    revision: '${{CF_REVISION}}'
+    git: github-bot
+
+  dist_clone:
+    type: git-clone
+    title: Git Clone ob-ui-libs
+    repo: ForgeCloud/ob-ui-libs
+    revision: master
+    git: github-bot
+
+  set-global-variables:
+    image: jess/jq
+    title: 'Set up global variables'
+    working_directory: ${{lib_clone}}
+    commands:
+      - 'export PROJECT_VERSION=$(jq -r ".version" package.json)'
+      - 'cf_export PROJECT_VERSION'
+      - cf_export BUILD_VERSION=v${PROJECT_VERSION}.${CF_SHORT_REVISION}
+
+  build:
+    image: node:10
+    title: 'Build ob-ui-common'
+    description: 'Build ob-ui-common dist files'
+    working_directory: ${{lib_clone}}
+    commands:
+      - NG_CLI_ANALYTICS=ci npm ci
+      - npm run build
+      - rm -fr /codefresh/volume/dist
+      - mv ./dist /codefresh/volume/dist
+
+  # github_prerelease:
+  #   image: codefresh/cfstep-github-release
+  #   environment:
+  #     - GITHUB_TOKEN=${{GITHUB_ACCESS_TOKEN}}
+  #     - FILES=/codefresh/volume/dist/*
+  #     - CF_REPO_OWNER=ForgeCloud
+  #     - CF_REPO_NAME=ob-ui-libs
+  #     - CF_BRANCH_TAG_NORMALIZED=v.0.0.0
+  #     - PRERELEASE=true
+  release:
+    image: codefreshio/git-image:latest
+    title: 'Release ob-ui-common'
+    description: 'Release ob-ui-common dist files'
+    working_directory: ${{dist_clone}}
+    commands:
+      - ls -la
+      - rm -fr ./*
+      - cp -r /codefresh/volume/dist/* ./
+      - git config --global user.email "codefresh@codefresh.io"
+      - git config --global user.name "Codefresh"
+      - git add -A
+      - git commit --allow-empty -m "Build ${{BUILD_VERSION}}"
+      - git tag -l "${{BUILD_VERSION}}"
+      - git push https://${{GITHUB_USERNAME}}:${{GITHUB_ACCESS_TOKEN}}@github.com/ForgeCloud/ob-ui-libs.git "master" --tags
+    when:
+      branch:
+        only:
+          - master
