@@ -25,8 +25,11 @@ steps:
     working_directory: ${{lib_clone}}
     commands:
       - 'export PROJECT_VERSION=$(jq -r ".version" package.json)'
+      - 'export PROJECT_VERSION=${PROJECT_VERSION%??}'
+      - 'export COMMIT_NUMBER=$(git rev-list --count HEAD)'
       - 'cf_export PROJECT_VERSION'
-      - cf_export BUILD_VERSION=v${PROJECT_VERSION}.${CF_SHORT_REVISION}
+      - 'cf_export COMMIT_NUMBER'
+      - cf_export BUILD_VERSION=v${PROJECT_VERSION}.${COMMIT_NUMBER}
 
   build:
     image: node:10
