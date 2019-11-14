@@ -36,7 +36,7 @@ steps:
     title: 'Set package version'
     working_directory: ${{dist_clone}}
     commands:
-      - jq -r  '[ .version |= "${{BUILD_VERSION}}"]' package.json > package.json.tmp
+      - jq -r .version |= "${{BUILD_VERSION}}" package.json > package.json.tmp
       - mv package.json.tmp package.json
 
   build:
