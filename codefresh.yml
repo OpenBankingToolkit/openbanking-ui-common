@@ -55,8 +55,8 @@ steps:
     image: benjjefferies/branch-protection-bot
     environment:
       - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
-      - OWNER="ForgeCloud"
-      - REPO="ob-ui-libs"
+      - OWNER=ForgeCloud
+      - REPO=ob-ui-libs
     when:
       condition:
         all:
@@ -89,8 +89,8 @@ steps:
     image: benjjefferies/branch-protection-bot
     environment:
       - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
-      - OWNER="ForgeCloud"
-      - REPO="ob-ui-libs"
+      - OWNER=ForgeCloud
+      - REPO=ob-ui-libs
     when:
       condition:
         all:
