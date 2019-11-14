@@ -3,10 +3,10 @@
  */
 export * from './lib/authentication.module';
 export * from './lib/guards/isconnected-guard.service';
-export * from './lib/components/forgerock-auth-details';
-export * from './lib/components/forgerock-auth-login';
-export * from './lib/components/forgerock-auth-oauth2-authorize';
-export * from './lib/components/forgerock-auth-password';
-export * from './lib/components/forgerock-auth-profile';
-export * from './lib/components/forgerock-auth-register';
-export * from './lib/components/forgerock-toolbar-menu';
+export * from './lib/components/forgerock-auth-details/index';
+export * from './lib/components/forgerock-auth-login/index';
+export * from './lib/components/forgerock-auth-oauth2-authorize/index';
+export * from './lib/components/forgerock-auth-password/index';
+export * from './lib/components/forgerock-auth-profile/index';
+export * from './lib/components/forgerock-auth-register/index';
+export * from './lib/components/forgerock-toolbar-menu/index';
