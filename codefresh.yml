@@ -50,6 +50,19 @@ steps:
       - rm -fr /codefresh/volume/dist
       - mv ./dist /codefresh/volume/dist
 
+  disable-include-administrator:
+    title: "temporarily disable include administrators"
+    image: benjjefferies/branch-protection-bot
+    environment:
+      - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
+      - OWNER=${{CF_REPO_OWNER}}
+      - REPO=${{CF_REPO_NAME}}
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[maven-release-plugin]") == false'
+          masterBranch: '"${{CF_BRANCH}}" == "master"'
+
   release:
     image: codefreshio/git-image:latest
     title: 'Release ob-ui-common'
@@ -70,3 +83,16 @@ steps:
       branch:
         only:
           - master
+
+  enable-include-administrator:
+    title: "enable include administrators"
+    image: benjjefferies/branch-protection-bot
+    environment:
+      - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
+      - OWNER=${{CF_REPO_OWNER}}
+      - REPO=${{CF_REPO_NAME}}
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[maven-release-plugin]") == false'
+          masterBranch: '"${{CF_BRANCH}}" == "master"'
