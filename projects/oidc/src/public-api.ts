@@ -2,4 +2,4 @@
  * Public API Surface of oidc
  */
 
-export * from './lib';
+export * from './lib/index';
