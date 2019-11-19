@@ -13,8 +13,6 @@ import { ForgerockOIDCRootEffects } from './store/effects/index';
 import { provideBootstrapEffects } from 'ob-ui-libs/utils';
 import { IsOIDCConnectedGuard } from './oidc.guard.service';
 
-console.log('ForgerockOIDCReducersToken', ForgerockOIDCReducersToken);
-
 export interface ForgerockOIDCConfig {
   backendURL: string;
 }

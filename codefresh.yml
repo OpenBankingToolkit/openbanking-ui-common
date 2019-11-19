@@ -47,6 +47,14 @@ steps:
     commands:
       - NG_CLI_ANALYTICS=ci npm ci
       - npm run build
+
+  tests:
+    image: node:10
+    title: 'ob-ui-common UT'
+    description: 'Run ob-ui-common unit tests'
+    working_directory: ${{lib_clone}}
+    commands:
+      - npm run test
       - rm -fr /codefresh/volume/dist
       - mv ./dist /codefresh/volume/dist
 
