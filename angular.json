@@ -17,11 +17,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/gdpr/src/test.ts",
-            "tsConfig": "projects/gdpr/tsconfig.spec.json",
-            "karmaConfig": "projects/gdpr/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -47,11 +46,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/services/src/test.ts",
-            "tsConfig": "projects/services/tsconfig.spec.json",
-            "karmaConfig": "projects/services/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -77,11 +75,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/utils/src/test.ts",
-            "tsConfig": "projects/utils/tsconfig.spec.json",
-            "karmaConfig": "projects/utils/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -107,11 +104,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/layouts/src/test.ts",
-            "tsConfig": "projects/layouts/tsconfig.spec.json",
-            "karmaConfig": "projects/layouts/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -137,11 +133,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/components/src/test.ts",
-            "tsConfig": "projects/components/tsconfig.spec.json",
-            "karmaConfig": "projects/components/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -167,11 +162,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/pipes/src/test.ts",
-            "tsConfig": "projects/pipes/tsconfig.spec.json",
-            "karmaConfig": "projects/pipes/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -197,11 +191,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/interceptors/src/test.ts",
-            "tsConfig": "projects/interceptors/tsconfig.spec.json",
-            "karmaConfig": "projects/interceptors/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -227,11 +220,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/shared/src/test.ts",
-            "tsConfig": "projects/shared/tsconfig.spec.json",
-            "karmaConfig": "projects/shared/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -257,11 +249,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/guards/src/test.ts",
-            "tsConfig": "projects/guards/tsconfig.spec.json",
-            "karmaConfig": "projects/guards/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -287,11 +278,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/native/src/test.ts",
-            "tsConfig": "projects/native/tsconfig.spec.json",
-            "karmaConfig": "projects/native/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -317,11 +307,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/authentication/src/test.ts",
-            "tsConfig": "projects/authentication/tsconfig.spec.json",
-            "karmaConfig": "projects/authentication/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {
@@ -347,11 +336,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/oidc/src/test.ts",
-            "tsConfig": "projects/oidc/tsconfig.spec.json",
-            "karmaConfig": "projects/oidc/karma.conf.js"
+            "no-cache": true,
+            "reporters": ["default"]
           }
         },
         "lint": {

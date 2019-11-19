@@ -50,6 +50,14 @@ steps:
       - rm -fr /codefresh/volume/dist
       - mv ./dist /codefresh/volume/dist
 
+  tests:
+    image: node:10
+    title: 'ob-ui-common UT'
+    description: 'Run ob-ui-common unit tests'
+    working_directory: ${{lib_clone}}
+    commands:
+      - npm run test
+
   disable-include-administrator:
     title: 'temporarily disable include administrators'
     image: benjjefferies/branch-protection-bot
