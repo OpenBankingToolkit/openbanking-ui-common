@@ -68,7 +68,7 @@ steps:
     when:
       condition:
         all:
-          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[maven-release-plugin]") == false'
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "Codefresh Build") == false'
           masterBranch: '"${{CF_BRANCH}}" == "master"'
 
   release:
@@ -102,5 +102,5 @@ steps:
     when:
       condition:
         all:
-          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[maven-release-plugin]") == false'
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "Codefresh Build") == false'
           masterBranch: '"${{CF_BRANCH}}" == "master"'
