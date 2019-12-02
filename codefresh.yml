@@ -65,6 +65,7 @@ steps:
       - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
       - OWNER=ForgeCloud
       - REPO=ob-ui-libs
+      - ENFORCE_ADMINS=false
     when:
       condition:
         all:
@@ -99,6 +100,7 @@ steps:
       - ACCESS_TOKEN=${{GITHUB_ACCESS_TOKEN}}
       - OWNER=ForgeCloud
       - REPO=ob-ui-libs
+      - ENFORCE_ADMINS=true
     when:
       condition:
         all:
