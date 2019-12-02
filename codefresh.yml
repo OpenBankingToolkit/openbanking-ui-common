@@ -86,7 +86,7 @@ steps:
       - git add -A
       - git commit --allow-empty -m "Build ${{BUILD_VERSION}}"
       - git tag -a "${{BUILD_VERSION}}" -m "Codefresh Build ${{BUILD_VERSION}}"
-      - git push https://${{GITHUB_USERNAME}}:${{GITHUB_ACCESS_TOKEN}}@github.com/ForgeCloud/ob-ui-libs.git master --tags
+      - git push https://${{GITHUB_USERNAME}}:${{GITHUB_ACCESS_TOKEN}}@github.com/ForgeCloud/ob-ui-libs.git master --tags --force
     when:
       branch:
         only:
