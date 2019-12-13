@@ -6,11 +6,11 @@ import { StoreModule } from '@ngrx/store';
 import { ForgerockAuthRedirectOIDCComponent } from './oidc.component';
 import { ForgerockAuthRedirectOIDCService } from './oidc.service';
 import { ForgerockOIDCConfigToken, ForgerockOIDCReducersToken } from './tokens';
-import { ForgerockConfigService, ForgerockConfigModule } from 'ob-ui-libs/services/forgerock-config';
-import { ForgerockAlertModule } from 'ob-ui-libs/components/forgerock-alert';
+import { ForgerockConfigService, ForgerockConfigModule } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
+import { ForgerockAlertModule } from '@forgerock/openbanking-ngx-common/components/forgerock-alert';
 import userReducer from './store/reducers/user';
 import { ForgerockOIDCRootEffects } from './store/effects/index';
-import { provideBootstrapEffects } from 'ob-ui-libs/utils';
+import { provideBootstrapEffects } from '@forgerock/openbanking-ngx-common/utils';
 import { IsOIDCConnectedGuard } from './oidc.guard.service';
 
 export interface ForgerockOIDCConfig {

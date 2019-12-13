@@ -13,7 +13,7 @@ import _get from 'lodash-es/get';
 
 import { IUser } from '../../store/models';
 import { ApiRequest } from '../../models';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 export const RegistrationValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
   const newPassword = control.get('newPassword');

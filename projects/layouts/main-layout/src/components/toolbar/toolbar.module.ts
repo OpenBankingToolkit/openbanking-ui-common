@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { ToolbarComponent } from './toolbar.component';
 import { ForgerockMainLayoutSharedModule } from '../../shared.module';
-import { ForgerockCustomerIconModule } from 'ob-ui-libs/components/forgerock-customer-icon';
+import { ForgerockCustomerIconModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-icon';
 import { LayoutContainerModule } from '../container/container.module';
 
 @NgModule({

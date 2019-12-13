@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ForgerockConfirmDialogModule } from 'ob-ui-libs/components/forgerock-confirm-dialog';
+import { ForgerockConfirmDialogModule } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
 import { ForgerockAuthProfileModule } from '../forgerock-auth-profile/forgerock-auth-profile.module';
 
 import { ForgerockAuthPasswordComponent } from './forgerock-auth-password.component';

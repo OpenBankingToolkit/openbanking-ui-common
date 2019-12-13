@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ForgerockDevInfoComponent } from './forgerock-dev-info.component';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
 const routes: Routes = [
   {

@@ -11,112 +11,41 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "common": [
-        "dist/common"
-      ],
-      "common/*": [
-        "dist/common/*"
-      ],
-      "forgerock": [
-        "projects/common"
-      ],
-      "forgerock/*": [
-        "projects/common/*"
-      ],
-      "@utils": [
-        "projects/common/src/utils"
-      ],
-      "@utils/*": [
-        "projects/common/src/utils/*"
-      ],
-      "gdpr": [
-        "dist/gdpr"
-      ],
-      "gdpr/*": [
-        "dist/gdpr/*"
-      ],
-      "services": [
-        "dist/services"
-      ],
-      "services/*": [
-        "dist/services/*"
-      ],
-      "ob-ui-libs": [
-        "dist",
-        "dist/ob-ui-libs"
-      ],
-      "ob-ui-libs/*": [
-        "dist/*",
-        "dist/ob-ui-libs/*"
-      ],
-      "utils": [
-        "dist/utils"
-      ],
-      "utils/*": [
-        "dist/utils/*"
-      ],
-      "layouts": [
-        "dist/layouts"
-      ],
-      "layouts/*": [
-        "dist/layouts/*"
-      ],
-      "components": [
-        "dist/components"
-      ],
-      "components/*": [
-        "dist/components/*"
-      ],
-      "pipes": [
-        "dist/pipes"
-      ],
-      "pipes/*": [
-        "dist/pipes/*"
-      ],
-      "interceptors": [
-        "dist/interceptors"
-      ],
-      "interceptors/*": [
-        "dist/interceptors/*"
-      ],
-      "shared": [
-        "dist/shared"
-      ],
-      "shared/*": [
-        "dist/shared/*"
-      ],
-      "guards": [
-        "dist/guards"
-      ],
-      "guards/*": [
-        "dist/guards/*"
-      ],
-      "native": [
-        "dist/native"
-      ],
-      "native/*": [
-        "dist/native/*"
-      ],
-      "authentication": [
-        "dist/authentication"
-      ],
-      "authentication/*": [
-        "dist/authentication/*"
-      ],
-      "oidc": [
-        "dist/oidc"
-      ],
-      "oidc/*": [
-        "dist/oidc/*"
-      ]
+      "common": ["dist/common"],
+      "common/*": ["dist/common/*"],
+      "forgerock": ["projects/common"],
+      "forgerock/*": ["projects/common/*"],
+      "@utils": ["projects/common/src/utils"],
+      "@utils/*": ["projects/common/src/utils/*"],
+      "gdpr": ["dist/gdpr"],
+      "gdpr/*": ["dist/gdpr/*"],
+      "services": ["dist/services"],
+      "services/*": ["dist/services/*"],
+      "@forgerock/openbanking-ngx-common": ["dist"],
+      "@forgerock/openbanking-ngx-common/*": ["dist/*"],
+      "utils": ["dist/utils"],
+      "utils/*": ["dist/utils/*"],
+      "layouts": ["dist/layouts"],
+      "layouts/*": ["dist/layouts/*"],
+      "components": ["dist/components"],
+      "components/*": ["dist/components/*"],
+      "pipes": ["dist/pipes"],
+      "pipes/*": ["dist/pipes/*"],
+      "interceptors": ["dist/interceptors"],
+      "interceptors/*": ["dist/interceptors/*"],
+      "shared": ["dist/shared"],
+      "shared/*": ["dist/shared/*"],
+      "guards": ["dist/guards"],
+      "guards/*": ["dist/guards/*"],
+      "native": ["dist/native"],
+      "native/*": ["dist/native/*"],
+      "authentication": ["dist/authentication"],
+      "authentication/*": ["dist/authentication/*"],
+      "oidc": ["dist/oidc"],
+      "oidc/*": ["dist/oidc/*"]
     }
   }
 }

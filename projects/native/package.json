@@ -1,5 +1,5 @@
 {
-  "name": "ob-ui-libs/native",
+  "name": "@forgerock/openbanking-ngx-common/native",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.0.0",

@@ -7,9 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { retry } from 'rxjs/operators';
 
 import { ForgerockAuthApiService } from '../../forgerock-auth-api/forgerock-auth-api.service';
-import { ForgerockMessagesService } from 'ob-ui-libs/services/forgerock-messages';
-import { ForgerockConfirmDialogComponent } from 'ob-ui-libs/components/forgerock-confirm-dialog';
-import { withErrorHandling } from 'ob-ui-libs/utils';
+import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
+import { ForgerockConfirmDialogComponent } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
+import { withErrorHandling } from '@forgerock/openbanking-ngx-common/utils';
 
 function validateLowercase(c: FormControl) {
   return c.value && c.value === c.value.toLowerCase()

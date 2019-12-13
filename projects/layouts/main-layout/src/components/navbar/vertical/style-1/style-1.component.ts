@@ -6,7 +6,7 @@ import { filter, takeUntil } from 'rxjs/operators';
 import { ForgerockMainLayoutConfigService } from '../../../../main-layout.config.service';
 import { ForgerockMainLayoutNavigationService } from '../../../../navigation/navigation.service';
 import { ForgerockLayoutSidebarService } from '../../../../sidebar/sidebar.service';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 @Component({
   // tslint:disable-next-line

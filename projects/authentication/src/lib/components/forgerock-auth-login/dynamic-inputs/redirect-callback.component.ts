@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { Field, ICallback } from '../../../models';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({

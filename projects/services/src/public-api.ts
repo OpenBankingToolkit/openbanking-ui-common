@@ -2,4 +2,4 @@
  * Public API Surface of services
  */
 
-export const PACKAGE_NAME = 'ob-ui-libs/services';
+export const PACKAGE_NAME = '@forgerock/openbanking-ngx-common/services';

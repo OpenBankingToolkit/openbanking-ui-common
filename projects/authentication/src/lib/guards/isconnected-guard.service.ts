@@ -8,9 +8,9 @@ import debug from 'debug';
 import { map, catchError } from 'rxjs/operators';
 import { IState, ISession } from '../store/models';
 import { sessionActions } from '../store/reducers/session';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockAuthApiService } from '../forgerock-auth-api/forgerock-auth-api.service';
-import { ForgerockMessagesService } from 'ob-ui-libs/services/forgerock-messages';
+import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 
 const log = debug('IsConnectedGuard');
 

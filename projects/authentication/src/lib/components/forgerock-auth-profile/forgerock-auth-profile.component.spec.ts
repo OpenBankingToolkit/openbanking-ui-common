@@ -8,7 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { ProfileContainerComponent } from './forgerock-auth-profile.container';
 import { ProfileComponent } from './forgerock-auth-profile.component';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
 describe('app:forgerock ProfileComponent', () => {
   let component: ProfileComponent;

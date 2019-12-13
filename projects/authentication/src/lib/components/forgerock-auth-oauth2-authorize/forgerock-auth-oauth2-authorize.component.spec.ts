@@ -7,11 +7,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ForgerockMessagesModule } from 'ob-ui-libs/services/forgerock-messages';
+import { ForgerockMessagesModule } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 import { ForgerockAuthApiModule } from '../../forgerock-auth-api/forgerock-auth-api.module';
-import { ForgerockConfigModule, ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
-import { ForgerockAlertModule } from 'ob-ui-libs/components/forgerock-alert';
+import { ForgerockConfigModule, ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
+import { ForgerockAlertModule } from '@forgerock/openbanking-ngx-common/components/forgerock-alert';
 
 import { ForgerockAuthOauth2AuthorizeComponent } from './forgerock-auth-oauth2-authorize.component';
 import { HttpClientModule } from '@angular/common/http';

@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import { IForgerockMainLayoutNavigationItem, IForgerockMainLayoutNavigations } from '../models';
 import { ForgerockMainLayoutNavigationsToken } from '../tokens';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 @Injectable({
   providedIn: 'root'

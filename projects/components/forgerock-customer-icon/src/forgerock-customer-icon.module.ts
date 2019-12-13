@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 
 import { ForgerockCustomerIconComponent } from './forgerock-customer-icon.component';
-import { ForgerockConfigModule } from 'ob-ui-libs/services/forgerock-config';
-import { ForgerockCustomerSVGModule } from 'ob-ui-libs/components/forgerock-customer-svg';
+import { ForgerockConfigModule } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
+import { ForgerockCustomerSVGModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-svg';
 
 @NgModule({
   imports: [CommonModule, StoreModule, ForgerockConfigModule, ForgerockCustomerSVGModule],

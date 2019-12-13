@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http';
 import _get from 'lodash-es/get';
 
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockAuthApiService } from '../../forgerock-auth-api/forgerock-auth-api.service';
 import { IOauth2AuthorizeRestReponse, IAspspError } from '../../models';
-import { encodeQueryData, replaceURLOrigin } from 'ob-ui-libs/utils';
+import { encodeQueryData, replaceURLOrigin } from '@forgerock/openbanking-ngx-common/utils';
 
 @Component({
   selector: 'forgerock-auth-oauth2-authorize-login',

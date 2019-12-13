@@ -4,8 +4,8 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import _get from 'lodash-es/get';
 
-import { encodeQueryData } from 'ob-ui-libs/utils';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { encodeQueryData } from '@forgerock/openbanking-ngx-common/utils';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { Params, Router } from '@angular/router';
 
 @Injectable({

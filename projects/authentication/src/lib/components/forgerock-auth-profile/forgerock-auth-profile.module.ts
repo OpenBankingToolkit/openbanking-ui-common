@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { ProfileContainerComponent } from './forgerock-auth-profile.container';
 import { ProfileComponent } from './forgerock-auth-profile.component';
-import { ForgerockSharedModule } from 'ob-ui-libs/shared';
+import { ForgerockSharedModule } from '@forgerock/openbanking-ngx-common/shared';
 
 @NgModule({
   imports: [CommonModule, StoreModule, RouterModule, FlexLayoutModule, TranslateModule, ForgerockSharedModule],

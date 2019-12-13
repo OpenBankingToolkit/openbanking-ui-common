@@ -4,9 +4,9 @@ import { Observable, of } from 'rxjs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
-import { ForgerockConfigService } from 'ob-ui-libs//services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common//services/forgerock-config';
 // import { selectors } from 'forgerock/src/app/modules/customization/store/reducers/files';
-import { ForgerockCustomerSVGComponent } from 'ob-ui-libs/components/forgerock-customer-svg';
+import { ForgerockCustomerSVGComponent } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-svg';
 
 @Component({
   selector: 'forgerock-customer-logo',

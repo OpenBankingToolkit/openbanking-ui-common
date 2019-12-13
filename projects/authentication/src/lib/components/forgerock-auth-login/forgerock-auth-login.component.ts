@@ -4,11 +4,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import debug from 'debug';
 import _get from 'lodash-es/get';
 
-import { withErrorHandling } from 'ob-ui-libs/utils';
-import { ForgerockMessagesService } from 'ob-ui-libs/services/forgerock-messages';
+import { withErrorHandling } from '@forgerock/openbanking-ngx-common/utils';
+import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 import { IConfigClient } from '../../models';
 import { ApiReponses } from '../../models';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockAuthApiService } from '../../forgerock-auth-api/forgerock-auth-api.service';
 
 const log = debug('ForgerockAuthLogin:ForgerockAuthLoginComponent');

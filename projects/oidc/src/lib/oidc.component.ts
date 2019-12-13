@@ -5,7 +5,7 @@ import _get from 'lodash-es/get';
 import { map, catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockAuthRedirectOIDCService } from './oidc.service';
 
 @Component({

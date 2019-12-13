@@ -5,7 +5,7 @@ import debug from 'debug';
 
 import { ForgerockMainLayoutNavigationService } from './navigation.service';
 import { IForgerockMainLayoutNavigationItem } from '../models';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 const log = debug('ForgerockMainLayoutNavigationComponent');
 

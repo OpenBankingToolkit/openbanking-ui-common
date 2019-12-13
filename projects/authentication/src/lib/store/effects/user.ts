@@ -10,7 +10,7 @@ import { userActions, userTypes } from '../reducers/user';
 import { ForgerockAuthApiService } from '../../forgerock-auth-api/forgerock-auth-api.service';
 import { IUser, IAction, IState, ISession } from '../models';
 import { selectSession } from '../reducers/session';
-import { ForgerockMessagesService } from 'ob-ui-libs/services/forgerock-messages';
+import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 
 @Injectable()
 export class UserEffects {

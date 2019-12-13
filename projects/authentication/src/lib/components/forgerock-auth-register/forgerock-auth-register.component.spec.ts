@@ -12,11 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ForgerockConfirmDialogModule } from 'ob-ui-libs/components/forgerock-confirm-dialog';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
+import { ForgerockConfirmDialogModule } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
 import { ForgerockAuthRegisterComponent } from './forgerock-auth-register.component';
-import { ForgerockMessagesModule } from 'ob-ui-libs/services/forgerock-messages';
+import { ForgerockMessagesModule } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('app:forgerock ForgerockAuthRegisterComponent', () => {

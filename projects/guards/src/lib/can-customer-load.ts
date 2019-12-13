@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanLoad, Route, Router, CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import debug from 'debug';
 
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 const log = debug('ForgerockCustomerCanAccessGuard');
 

@@ -6,7 +6,7 @@ import debug from 'debug';
 
 import { ForgerockAuthRedirectOIDCService } from './oidc.service';
 import { catchError, map, take } from 'rxjs/operators';
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { IOIDCUser, IOIDCModuleState } from './models';
 import { selectOIDCConnected, ForgerockOIDCGetUserSuccessAction } from './store/reducers/user';
 

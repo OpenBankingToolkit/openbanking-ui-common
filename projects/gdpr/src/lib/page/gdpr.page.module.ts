@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { ForgerockGDPRPageComponent } from './gdpr.page.component';
 import { ForgerockGDPRPageRoutingModule } from './gdpr.page.routing.module';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
 @NgModule({
   imports: [CommonModule, MatCardModule, TranslateModule, ForgerockCustomerLogoModule, ForgerockGDPRPageRoutingModule],

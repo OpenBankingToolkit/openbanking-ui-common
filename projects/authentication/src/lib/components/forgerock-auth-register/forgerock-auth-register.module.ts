@@ -11,9 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ForgerockAuthRegisterComponent } from './forgerock-auth-register.component';
-import { CanDeactivateGuard } from 'ob-ui-libs/guards';
-import { ForgerockConfirmDialogModule } from 'ob-ui-libs/components/forgerock-confirm-dialog';
-import { ForgerockCustomerLogoModule } from 'ob-ui-libs/components/forgerock-customer-logo';
+import { CanDeactivateGuard } from '@forgerock/openbanking-ngx-common/guards';
+import { ForgerockConfirmDialogModule } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
+import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
 @NgModule({
   imports: [

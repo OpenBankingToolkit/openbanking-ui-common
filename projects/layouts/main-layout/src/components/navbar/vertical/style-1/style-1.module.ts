@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavbarVerticalStyle1Component } from './style-1.component';
 import { ForgerockMainLayoutNavigationModule } from '../../../../navigation/navigation.module';
 import { ForgerockMainLayoutSharedModule } from '../../../../shared.module';
-import { ForgerockCustomerIconModule } from 'ob-ui-libs/components/forgerock-customer-icon';
+import { ForgerockCustomerIconModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-icon';
 
 @NgModule({
   declarations: [NavbarVerticalStyle1Component],

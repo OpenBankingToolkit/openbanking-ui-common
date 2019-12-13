@@ -1,5 +1,5 @@
 {
-  "name": "ob-ui-libs/interceptors",
+  "name": "@forgerock/openbanking-ngx-common/interceptors",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.0.0",

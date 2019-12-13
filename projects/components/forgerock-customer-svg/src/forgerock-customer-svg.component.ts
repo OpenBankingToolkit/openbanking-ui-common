@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { ForgerockConfigService } from 'ob-ui-libs/services/forgerock-config';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

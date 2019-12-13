@@ -12,8 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { ForgerockAuthPasswordComponent } from './forgerock-auth-password.component';
 import { ForgerockAuthPasswordContainer } from './forgerock-auth-password.container';
-import { CanDeactivateGuard } from 'ob-ui-libs/guards';
-import { ForgerockConfirmDialogModule } from 'ob-ui-libs/components/forgerock-confirm-dialog';
+import { CanDeactivateGuard } from '@forgerock/openbanking-ngx-common/guards';
+import { ForgerockConfirmDialogModule } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
 import { ForgerockAuthProfileModule } from '../forgerock-auth-profile/forgerock-auth-profile.module';
 
 const routes: Routes = [
