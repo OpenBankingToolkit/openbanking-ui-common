@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - run: echo $(git rev-list --count HEAD)
+      - name: Create .npmrc file
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_ACCESS_TOKEN}" > .npmrc
       - name: Install Dependencies
         run: NG_CLI_ANALYTICS=ci npm ci
       - name: Build
