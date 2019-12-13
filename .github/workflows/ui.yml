@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - run: echo $(git rev-list --count HEAD)
+      - run: |
+          echo $(git rev-list --count HEAD)
+          echo $(git log)
       - name: Create .npmrc file
         run: echo "//registry.npmjs.org/:_authToken=\${NPM_ACCESS_TOKEN}" > .npmrc
       - name: Install Dependencies
