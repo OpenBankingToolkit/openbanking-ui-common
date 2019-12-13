@@ -5,14 +5,13 @@ const path = require('path'),
 
 const PACKAGE_ROOT = path.join(__dirname, '..');
 const DIST_PATH = path.join(PACKAGE_ROOT, 'dist');
-const LIB_NAME = '@forgerock/openbanking-ngx-common';
 
 async function run() {
   try {
-    const { version, license } = await fs.readJson(path.join(PACKAGE_ROOT, 'package.json'));
+    const { name, version, license } = await fs.readJson(path.join(PACKAGE_ROOT, 'package.json'));
 
     await fs.outputJson(path.join(DIST_PATH, 'package.json'), {
-      name: LIB_NAME,
+      name,
       version,
       license
     });

@@ -1,5 +1,5 @@
 {
-  "name": "ob-ui-common",
+  "name": "@forgerock/openbanking-ngx-common",
   "version": "0.1.30",
   "license": "Apache-2.0",
   "scripts": {
