@@ -1,12 +1,12 @@
 {
   "name": "ob-ui-common",
-  "version": "v0.1.0",
+  "version": "0.1.30",
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "npm run build.utils && npm run build.services && npm run build.components && npm run build.layouts && npm run build.gdpr && npm run build.pipes && npm run build.guards && npm run build.interceptors && npm run build.shared && npm run build.oidc && npm run build.authentication && npm run build.native",
-    "postbuild": "node ./scripts/postbuild.js --patch $(git rev-list --count HEAD)",
+    "postbuild": "node ./scripts/postbuild.js",
     "build.authentication": "ng build authentication",
     "build.components": "ng build components && ./scripts/bundleSass.js --project components",
     "build.gdpr": "ng build gdpr && ./scripts/bundleSass.js --project gdpr",
