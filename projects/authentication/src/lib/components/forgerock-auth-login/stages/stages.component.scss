@@ -1,11 +1,11 @@
 :host {
   text-align: center;
 
-  /deep/ button[type='submit'] {
+  ::ng-deep button[type='submit'] {
     margin: 15px 0 0;
   }
 
-  /deep/ .footer {
+  ::ng-deep .footer {
     margin-top: 35px;
   }
 }

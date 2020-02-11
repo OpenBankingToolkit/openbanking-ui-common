@@ -12,7 +12,7 @@ import { ForgerockAuthApiModule } from '../../forgerock-auth-api/forgerock-auth-
 import { ForgerockConfigModule } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockCustomerLogoModule } from '@forgerock/openbanking-ngx-common/components/forgerock-customer-logo';
 
-export const ngModuleConfig = {
+@NgModule({
   imports: [
     CommonModule,
     TranslateModule,
@@ -27,7 +27,5 @@ export const ngModuleConfig = {
   ],
   exports: [ForgerockAuthLoginComponent],
   declarations: [ForgerockAuthLoginComponent]
-};
-
-@NgModule(ngModuleConfig)
+})
 export class ForgerockAuthLoginModule {}

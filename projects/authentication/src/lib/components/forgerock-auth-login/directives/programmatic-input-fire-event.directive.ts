@@ -11,7 +11,7 @@ export class ProgrammaticInputFireEventDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.renderer.setElementAttribute(this.nativeElement, 'disabled', 'true');
+    this.renderer.setAttribute(this.nativeElement, 'disabled', 'true');
     Object.defineProperty(this.nativeElement, 'value', {
       get: function() {
         return this.getAttribute('value');
