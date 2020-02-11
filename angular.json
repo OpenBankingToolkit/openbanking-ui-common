@@ -16,7 +16,12 @@
             "tsConfig": "projects/gdpr/tsconfig.lib.json",
             "project": "projects/gdpr/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/gdpr/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -46,7 +51,12 @@
             "tsConfig": "projects/services/tsconfig.lib.json",
             "project": "projects/services/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/services/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -76,7 +86,12 @@
             "tsConfig": "projects/utils/tsconfig.lib.json",
             "project": "projects/utils/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/utils/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -106,7 +121,12 @@
             "tsConfig": "projects/layouts/tsconfig.lib.json",
             "project": "projects/layouts/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/layouts/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -136,7 +156,12 @@
             "tsConfig": "projects/components/tsconfig.lib.json",
             "project": "projects/components/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/components/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -166,7 +191,12 @@
             "tsConfig": "projects/pipes/tsconfig.lib.json",
             "project": "projects/pipes/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/pipes/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -196,7 +226,12 @@
             "tsConfig": "projects/interceptors/tsconfig.lib.json",
             "project": "projects/interceptors/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/interceptors/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -226,7 +261,12 @@
             "tsConfig": "projects/shared/tsconfig.lib.json",
             "project": "projects/shared/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -256,7 +296,12 @@
             "tsConfig": "projects/guards/tsconfig.lib.json",
             "project": "projects/guards/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/guards/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -286,7 +331,12 @@
             "tsConfig": "projects/native/tsconfig.lib.json",
             "project": "projects/native/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/native/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -316,7 +366,12 @@
             "tsConfig": "projects/authentication/tsconfig.lib.json",
             "project": "projects/authentication/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/authentication/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
@@ -346,7 +401,12 @@
             "tsConfig": "projects/oidc/tsconfig.lib.json",
             "project": "projects/oidc/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/oidc/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {

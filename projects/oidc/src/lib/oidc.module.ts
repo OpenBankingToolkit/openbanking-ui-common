@@ -1,12 +1,15 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatProgressBarModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { StoreModule } from '@ngrx/store';
 
 import { ForgerockAuthRedirectOIDCComponent } from './oidc.component';
 import { ForgerockAuthRedirectOIDCService } from './oidc.service';
 import { ForgerockOIDCConfigToken, ForgerockOIDCReducersToken } from './tokens';
-import { ForgerockConfigService, ForgerockConfigModule } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
+import {
+  ForgerockConfigService,
+  ForgerockConfigModule
+} from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 import { ForgerockAlertModule } from '@forgerock/openbanking-ngx-common/components/forgerock-alert';
 import userReducer from './store/reducers/user';
 import { ForgerockOIDCRootEffects } from './store/effects/index';
