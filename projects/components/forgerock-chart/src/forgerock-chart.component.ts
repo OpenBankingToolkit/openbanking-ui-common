@@ -41,7 +41,7 @@ export class ForgerockChartComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     Chart.pluginService.register({
-      beforeDraw: function(chart: any) {
+      beforeDraw: (chart: any) => {
         const centerConfig = _get(chart, 'options.elements.center');
         if (chart.config.type === 'doughnut' && centerConfig) {
           // Code from http://jsfiddle.net/nkzyx50o/
@@ -57,10 +57,10 @@ export class ForgerockChartComponent implements OnInit, OnChanges {
 
           const ctx = chart.ctx;
           const sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
-          //Start with a base font of 30px
+          // Start with a base font of 30px
           ctx.font = '30px ' + fontStyle;
 
-          //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+          // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
           const stringWidth = ctx.measureText(text).width;
           const elementWidth = chart.innerRadius * 2 - sidePaddingCalculated;
 
@@ -72,7 +72,7 @@ export class ForgerockChartComponent implements OnInit, OnChanges {
           // Pick a new font size so it will not be larger than the height of label.
           const fontSizeToUse = Math.min(newFontSize, elementHeight);
 
-          //Set font settings to draw it correctly.
+          // Set font settings to draw it correctly.
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
@@ -80,14 +80,14 @@ export class ForgerockChartComponent implements OnInit, OnChanges {
           ctx.font = fontSizeToUse * fontSizeFactor + 'px ' + fontStyle;
           ctx.fillStyle = color;
 
-          //Draw text in center
+          // Draw text in center
           ctx.fillText(text, centerX + xShift, centerY + yShift);
         }
       }
     });
 
     this.instance = new Chart(this.chart.element.nativeElement, {
-      ...this.config,
+      ..._merge({}, this.config),
       options: _merge(this.defaultOptions, this.config.options || {})
     });
   }
