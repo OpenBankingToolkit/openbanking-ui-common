@@ -10,6 +10,7 @@ import { ForgerockAuthApiService } from '../../forgerock-auth-api/forgerock-auth
 import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 import { ForgerockConfirmDialogComponent } from '@forgerock/openbanking-ngx-common/components/forgerock-confirm-dialog';
 import { withErrorHandling } from '@forgerock/openbanking-ngx-common/utils';
+import { ForgerockConfigService } from '@forgerock/openbanking-ngx-common/services/forgerock-config';
 
 function validateLowercase(c: FormControl) {
   return c.value && c.value === c.value.toLowerCase()
@@ -29,6 +30,7 @@ function validateLowercase(c: FormControl) {
 })
 export class ForgerockAuthRegisterComponent implements OnInit {
   formGroup: FormGroup;
+  disableRegistration: boolean = this.configService.get('featureFlags.disableRegistration', false);
 
   constructor(
     private api: ForgerockAuthApiService,
@@ -36,7 +38,8 @@ export class ForgerockAuthRegisterComponent implements OnInit {
     private dialog: MatDialog,
     private translate: TranslateService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private configService: ForgerockConfigService
   ) {}
 
   ngOnInit() {
@@ -73,10 +76,7 @@ export class ForgerockAuthRegisterComponent implements OnInit {
 
     this.api
       .register(realm, this.formGroup.value)
-      .pipe(
-        retry(3),
-        withErrorHandling
-      )
+      .pipe(retry(3), withErrorHandling)
       .subscribe(
         data => {
           this.messages.success(this.translate.instant('REGISTER.SUCCESS'));

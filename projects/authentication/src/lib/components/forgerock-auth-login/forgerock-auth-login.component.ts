@@ -15,7 +15,21 @@ const log = debug('ForgerockAuthLogin:ForgerockAuthLoginComponent');
 
 @Component({
   selector: 'forgerock-auth-login',
-  templateUrl: './forgerock-auth-login.component.html',
+  template: `
+    <mat-card>
+      <mat-card-content>
+        <forgerock-customer-logo></forgerock-customer-logo>
+        <mat-progress-bar *ngIf="!response && !error" mode="indeterminate" color="accent"></mat-progress-bar>
+        <app-stages *ngIf="response" [response]="response" [client]="client" (formSubmit)="onSignin()"></app-stages>
+      </mat-card-content>
+      <mat-card-actions *ngIf="!disableRegistration">
+        {{ 'STAGES.' + response.stage + '.DONT_HAVE_ACCOUNT' | translate }}
+        <button color="accent" mat-button routerLink="/register" queryParamsHandling="preserve">
+          {{ 'CREATE_ACCOUNT' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  `,
   styleUrls: ['./forgerock-auth-login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -23,6 +37,7 @@ export class ForgerockAuthLoginComponent implements OnInit {
   response: ApiReponses.AuthLoginResponse;
   error: Error;
   client: IConfigClient = this.configService.get('client');
+  disableRegistration: boolean = this.configService.get('featureFlags.disableRegistration', false);
 
   constructor(
     private api: ForgerockAuthApiService,
