@@ -18,6 +18,7 @@ jobs:
         run: NG_CLI_ANALYTICS=ci npm ci
       - name: Build
         run: |
+          cat .npmrc
           npm run build
       - name: Publish
         run: npm publish ./dist
