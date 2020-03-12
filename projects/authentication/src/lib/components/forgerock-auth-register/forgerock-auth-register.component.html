@@ -1,6 +1,9 @@
 <mat-card>
   <forgerock-customer-logo></forgerock-customer-logo>
-  <mat-card-content>
+  <mat-card-content *ngIf="disableRegistration">
+    <forgerock-alert color="warn">Registration disabled</forgerock-alert>
+  </mat-card-content>
+  <mat-card-content *ngIf="!disableRegistration">
     <h1>{{ 'SIGNUP' | translate }}</h1>
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <mat-form-field class="full-width">
@@ -60,11 +63,13 @@
         <button mat-flat-button type="submit" color="accent" [disabled]="formGroup.invalid">
           {{ 'SIGNUP' | translate }}
         </button>
-        <p>
-          {{ 'REGISTER.ALREADY_HAVE_ACCOUNT' | translate }}
-          <a routerLink="/login" queryParamsHandling="preserve">{{ 'SIGNIN' | translate }}</a>
-        </p>
       </div>
     </form>
   </mat-card-content>
+  <mat-card-actions
+    >{{ 'REGISTER.ALREADY_HAVE_ACCOUNT' | translate }}
+    <button color="accent" mat-button routerLink="/login" queryParamsHandling="preserve">
+      {{ 'SIGNIN' | translate }}
+    </button>
+  </mat-card-actions>
 </mat-card>

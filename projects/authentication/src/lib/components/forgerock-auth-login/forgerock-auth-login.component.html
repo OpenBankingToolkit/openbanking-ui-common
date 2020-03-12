@@ -1,7 +1,0 @@
-<mat-card>
-  <mat-card-content>
-    <forgerock-customer-logo></forgerock-customer-logo>
-    <mat-progress-bar *ngIf="!response && !error" mode="indeterminate" color="accent"></mat-progress-bar>
-    <app-stages *ngIf="response" [response]="response" [client]="client" (formSubmit)="onSignin()"></app-stages>
-  </mat-card-content>
-</mat-card>

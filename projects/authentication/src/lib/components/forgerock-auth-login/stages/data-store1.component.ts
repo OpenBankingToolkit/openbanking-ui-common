@@ -14,12 +14,6 @@ import { StagesParentComponent } from './stages.parent.component';
           {{ 'SIGNIN' | translate }}
         </button>
       </div>
-      <div class="footer">
-        <p>
-          {{ 'STAGES.' + response.stage + '.DONT_HAVE_ACCOUNT' | translate }}
-          <a routerLink="/register" queryParamsHandling="preserve">{{ 'CREATE_ACCOUNT' | translate }}</a>
-        </p>
-      </div>
     </form>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
