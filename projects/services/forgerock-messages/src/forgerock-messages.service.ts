@@ -10,14 +10,14 @@ export class ForgerockMessagesService {
   constructor(private snackBar: MatSnackBar) {}
 
   error(text = 'Something Wrong happened', action = '', options = defaultSnackbarOptions) {
-    this.snackBar.open(text, action, options);
+    return this.snackBar.open(text, action, options);
   }
 
   info(text, action = '', options = defaultSnackbarOptions) {
-    this.snackBar.open(text, action, options);
+    return this.snackBar.open(text, action, options);
   }
 
   success(text = 'Success', action = '', options = defaultSnackbarOptions) {
-    this.snackBar.open(text, action, options);
+    return this.snackBar.open(text, action, options);
   }
 }
