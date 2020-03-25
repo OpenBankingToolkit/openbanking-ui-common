@@ -23,7 +23,7 @@ const log = debug('ForgerockAuthLogin:ForgerockAuthLoginComponent');
         <app-stages *ngIf="response" [response]="response" [client]="client" (formSubmit)="onSignin()"></app-stages>
       </mat-card-content>
       <mat-card-actions *ngIf="!disableRegistration">
-        {{ 'STAGES.' + response.stage + '.DONT_HAVE_ACCOUNT' | translate }}
+        {{ 'DONT_HAVE_ACCOUNT' | translate }}
         <button color="accent" mat-button routerLink="/register" queryParamsHandling="preserve">
           {{ 'CREATE_ACCOUNT' | translate }}
         </button>
