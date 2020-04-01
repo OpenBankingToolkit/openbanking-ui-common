@@ -1,6 +1,7 @@
 export interface IOIDCUser {
   id: string;
   organisationId: string;
+  authorities: string[];
   directoryID?: string;
 }
 

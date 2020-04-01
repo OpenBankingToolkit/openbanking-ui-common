@@ -72,3 +72,4 @@ export const selectOIDCUser = (state: IOIDCModuleState) => _get(state.oidc, 'use
 export const selectOIDCUserId = (state: IOIDCModuleState) => _get(state.oidc, 'user.user.id');
 export const selectOIDCDirectoryId = (state: IOIDCModuleState) => _get(state.oidc, 'user.user.directoryID');
 export const selectOIDCUserOrganisationId = (state: IOIDCModuleState) => _get(state.oidc, 'user.user.organisationId');
+export const selectOIDCUserAuthorities = (state: IOIDCModuleState) => _get(state.oidc, 'user.user.authorities', []);
