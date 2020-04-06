@@ -36,9 +36,11 @@ export class ForgerockMainLayoutNavigationComponent implements OnInit {
       this.navigation || this._fuseNavigationService.getCurrentNavigation()
     );
 
-    this._fuseNavigationService.onNavigationChanged.pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
-      this.navigation = this.filterNavigationWithRouteDenyList(this._fuseNavigationService.getCurrentNavigation());
-    });
+    this._fuseNavigationService.onNavigationChanged
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(({ navigation }) => {
+        this.navigation = this.filterNavigationWithRouteDenyList(navigation);
+      });
   }
 
   filterNavigationWithRouteDenyList(
