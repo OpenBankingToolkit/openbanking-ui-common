@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as format_ from 'date-fns/format';
+import formatDate from 'date-fns/format';
+import debug from 'debug';
 
-// https://github.com/jvandemo/generator-angular2-library/issues/221
-const formatDate = format_;
+const log = debug('Pipe:forgerockDateFormat');
 
 @Pipe({
   name: 'forgerockDateFormat',
@@ -13,7 +13,14 @@ export class DateFormatPipe implements PipeTransform {
     if (!date) {
       throw new Error('dateFormat needs a date');
     }
-    return formatDate(date, format);
-    5;
+    try {
+      if (typeof date === 'string') {
+        return formatDate(new Date(date), format);
+      }
+      return formatDate(date, format);
+    } catch (error) {
+      log(error, { date, format });
+      return date.toString();
+    }
   }
 }
