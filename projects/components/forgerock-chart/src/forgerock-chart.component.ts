@@ -11,6 +11,7 @@ import {
 import { Chart } from 'chart.js';
 import _merge from 'lodash-es/merge';
 import _get from 'lodash-es/get';
+import _cloneDeep from 'lodash-es/cloneDeep';
 
 @Component({
   selector: 'forgerock-chart',
@@ -86,15 +87,19 @@ export class ForgerockChartComponent implements OnInit, OnChanges {
       }
     });
 
-    this.instance = new Chart(this.chart.element.nativeElement, {
-      ...this.config,
-      options: _merge(this.defaultOptions, this.config.options || {})
-    });
+    const options = _merge({}, this.defaultOptions, _get(this.config, 'options', {}));
+    this.instance = new Chart(
+      this.chart.element.nativeElement,
+      _cloneDeep({
+        ...(this.config || {}),
+        options
+      })
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.config && !changes.config.firstChange) {
-      this.instance.config = changes.config.currentValue;
+    if (changes.config && !changes.config.firstChange && changes.config.currentValue) {
+      this.instance.config = _cloneDeep(changes.config.currentValue);
       this.instance.update();
     }
   }
