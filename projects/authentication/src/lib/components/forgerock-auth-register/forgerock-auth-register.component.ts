@@ -44,7 +44,7 @@ export class ForgerockAuthRegisterComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = new FormGroup({
-      username: new FormControl('', [Validators.minLength(6), validateLowercase, Validators.required]),
+      username: new FormControl('', [Validators.minLength(6), Validators.required]),
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),

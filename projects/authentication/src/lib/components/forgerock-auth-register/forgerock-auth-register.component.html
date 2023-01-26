@@ -7,12 +7,12 @@
     <h1>{{ 'SIGNUP' | translate }}</h1>
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Username" formControlName="username" required autocomplete="username" />
+        <input matInput placeholder="Username" formControlName="username" required autocomplete="username" pattern="^[a-z0-9]*$"/>
+        <mat-error *ngIf="formGroup.controls.username.hasError('pattern') && formGroup.controls.username.touched">
+          Username must be only alpha numeric values in lowercase
+        </mat-error>
         <mat-error *ngIf="formGroup.controls.username.hasError('minlength') && formGroup.controls.username.touched">
           Username must be at least 6 characters long
-        </mat-error>
-        <mat-error *ngIf="formGroup.controls.username.hasError('lowercase') && formGroup.controls.username.touched">
-          Username must be lowercase
         </mat-error>
         <mat-error *ngIf="formGroup.controls.username.hasError('required') && formGroup.controls.username.touched">
           Username <strong>required</strong>
